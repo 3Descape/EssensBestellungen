@@ -28,6 +28,6 @@ class HomeController extends Controller
 
     public function test()
     {
-        return json_encode(Adldap::search()->where('uid', 'euler')->get());
+        return json_encode(Adldap::auth()->attempt('euler', 'password'));
     }
 }
